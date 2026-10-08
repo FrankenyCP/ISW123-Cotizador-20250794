@@ -43,6 +43,8 @@
             nudPersonas = new NumericUpDown();
             btnPorPersona = new Button();
             btnDeposito = new Button();
+            chkFinSemana = new CheckBox();
+            btnFinSemana = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -188,11 +190,33 @@
             btnDeposito.UseVisualStyleBackColor = true;
             btnDeposito.Click += btnDeposito_Click;
             // 
+            // chkFinSemana
+            // 
+            chkFinSemana.AutoSize = true;
+            chkFinSemana.Location = new Point(734, 627);
+            chkFinSemana.Name = "chkFinSemana";
+            chkFinSemana.Size = new Size(178, 24);
+            chkFinSemana.TabIndex = 15;
+            chkFinSemana.Text = "Fin de semana (+15%)";
+            chkFinSemana.UseVisualStyleBackColor = true;
+            // 
+            // btnFinSemana
+            // 
+            btnFinSemana.Location = new Point(491, 664);
+            btnFinSemana.Name = "btnFinSemana";
+            btnFinSemana.Size = new Size(124, 29);
+            btnFinSemana.TabIndex = 16;
+            btnFinSemana.Text = "Fin de Semana";
+            btnFinSemana.UseVisualStyleBackColor = true;
+            btnFinSemana.Click += btnFinSemana_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnFinSemana);
+            Controls.Add(chkFinSemana);
             Controls.Add(btnDeposito);
             Controls.Add(btnPorPersona);
             Controls.Add(nudPersonas);
@@ -235,5 +259,7 @@
         private NumericUpDown nudPersonas;
         private Button btnPorPersona;
         private Button btnDeposito;
+        private CheckBox chkFinSemana;
+        private Button btnFinSemana;
     }
 }

@@ -83,5 +83,27 @@ namespace Cotizador_TuMatricula
             lstResultados.Items.Add($"Depósito (30%): US$ {deposito:N2}");
             lstResultados.Items.Add($"Saldo pendiente: US$ {saldo:N2}");
         }
+
+        private void btnFinSemana_Click(object sender, EventArgs e)
+        {
+            decimal tarifa = nudTarifa.Value;
+
+           
+            if (chkFinSemana.Checked)
+            {
+                tarifa = tarifa * 1.15m;
+            }
+
+            
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = tarifa
+            };
+
+           
+            lstResultados.Items.Add($"Total (Fin de semana): US$ {reserva.Total:N2}");
+        }
     }
 }
