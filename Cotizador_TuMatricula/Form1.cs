@@ -193,5 +193,75 @@ namespace Cotizador_TuMatricula
             lstResultados.Items.Add($"--- CUENTA TOTAL ESTADÍA ---");
             lstResultados.Items.Add($"Total Estadía: US$ {cuentaTotalUSD:N2}");
         }
+
+        private void btnViejo_Click(object sender, EventArgs e)
+        {
+            lstResultados.Items.Add($"Depósito de 1000: {SistemaViejo.CalcularDeposito(1000m):N2} (debe dar 300.00)");
+            lstResultados.Items.Add($"100 USD a tasa 60: {SistemaViejo.APesos(100m, 60m):N2} (debe dar 6,000.00)");
+            lstResultados.Items.Add($"Tarifa 200 fin de semana: {SistemaViejo.TarifaFinDeSemana(200m, true):N2} (debe dar 230.00)");
+            lstResultados.Items.Add($"Excursión 4 × 50: {SistemaViejo.TotalExcursion(4, 50m):N2} (debe dar 180.00)");
+            lstResultados.Items.Add($"Minibar 3 × 4: {SistemaViejo.TotalMinibar(3, 4m):N2} (debe dar 14.16)");
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            // 1. Limpiar el ListBox para mostrar la nueva factura
+            lstResultados.Items.Clear();
+
+            // 2. Aplicar recargo de fin de semana si la casilla está marcada
+            decimal tarifa = nudTarifa.Value;
+            if (chkFinSemana.Checked)
+            {
+                tarifa = tarifa * 1.15m;
+            }
+
+            // 3. Crear el objeto Reserva con los valores de la interfaz
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = tarifa
+            };
+
+            // 4. Crear los objetos de servicios con tus datos calculados de la matrícula
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = (int)nudPersonas.Value, // O tus 3 personas
+                Nocturno = true
+            };
+
+            var excursion = new Excursion
+            {
+                Personas = 5,           // Personas + 2 (3 + 2 = 5)
+                PrecioPorPersona = 65m  // 45 + 5 * 4 = 65.00
+            };
+
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 6,          // Último dígito + 2 (4 + 2 = 6)
+                PrecioUnitario = 3.50m
+            };
+
+            // 5. Calcular los totales acumulados en USD y RD$
+            decimal totalGeneralUSD = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
+            decimal totalGeneralRD = totalGeneralUSD * nudTasa.Value;
+
+            // 6. Calcular el depósito obligatorio (30%) usando el método corregido de SistemaViejo
+            decimal depositoUSD = SistemaViejo.CalcularDeposito(totalGeneralUSD);
+
+            // 7. Imprimir el desglose detallado en la lista
+            lstResultados.Items.Add("======== FACTURA DE LA ESTADÍA ========");
+            lstResultados.Items.Add($"Huésped: {reserva.Huesped}");
+            lstResultados.Items.Add("----------------------------------------");
+            lstResultados.Items.Add($"1. Hospedaje ({reserva.Noches} noches): US$ {reserva.Total:N2}");
+            lstResultados.Items.Add($"2. Traslado Aeropuerto: US$ {traslado.Total:N2}");
+            lstResultados.Items.Add($"3. Excursión Saona: US$ {excursion.Total:N2}");
+            lstResultados.Items.Add($"4. Consumo Minibar: US$ {minibar.Total:N2}");
+            lstResultados.Items.Add("----------------------------------------");
+            lstResultados.Items.Add($"TOTAL GENERAL (USD): US$ {totalGeneralUSD:N2}");
+            lstResultados.Items.Add($"TOTAL GENERAL (RD$): RD$ {totalGeneralRD:N2}");
+            lstResultados.Items.Add($"Depósito Requerido (30%): US$ {depositoUSD:N2}");
+            lstResultados.Items.Add("========================================");
+        }
     }
 }
