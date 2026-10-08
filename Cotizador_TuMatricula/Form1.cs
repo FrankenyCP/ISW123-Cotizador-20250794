@@ -144,5 +144,16 @@ namespace Cotizador_TuMatricula
 
             lstResultados.Items.Add($"Excursión Saona: US$ {excursion.Total:N2}");
         }
+
+        private void btnMinibar_Click(object sender, EventArgs e)
+        {
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 6,          // Último dígito + 2 (4 + 2 = 6)
+                PrecioUnitario = 3.50m
+            };
+
+            lstResultados.Items.Add($"Consumo Minibar: US$ {minibar.Total:N2}");
+        }
     }
 }

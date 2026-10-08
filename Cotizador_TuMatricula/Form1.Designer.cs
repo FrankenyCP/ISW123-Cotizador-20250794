@@ -48,6 +48,7 @@
             btnDesglose = new Button();
             btnTraslado = new Button();
             btnExcursion = new Button();
+            btnMinibar = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -243,11 +244,22 @@
             btnExcursion.UseVisualStyleBackColor = true;
             btnExcursion.Click += btnExcursion_Click;
             // 
+            // btnMinibar
+            // 
+            btnMinibar.Location = new Point(231, 174);
+            btnMinibar.Name = "btnMinibar";
+            btnMinibar.Size = new Size(157, 29);
+            btnMinibar.TabIndex = 20;
+            btnMinibar.Text = "Consumo Mini bar";
+            btnMinibar.UseVisualStyleBackColor = true;
+            btnMinibar.Click += btnMinibar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnMinibar);
             Controls.Add(btnExcursion);
             Controls.Add(btnTraslado);
             Controls.Add(btnDesglose);
@@ -300,5 +312,6 @@
         private Button btnDesglose;
         private Button btnTraslado;
         private Button btnExcursion;
+        private Button btnMinibar;
     }
 }
