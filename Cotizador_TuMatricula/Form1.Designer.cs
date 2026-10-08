@@ -36,8 +36,12 @@
             label2 = new Label();
             label3 = new Label();
             button1 = new Button();
+            label4 = new Label();
+            nudTasa = new NumericUpDown();
+            btnPesos = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
             SuspendLayout();
             // 
             // txtHuesped
@@ -70,7 +74,7 @@
             // lstResultados
             // 
             lstResultados.FormattingEnabled = true;
-            lstResultados.Location = new Point(262, 23);
+            lstResultados.Location = new Point(395, 33);
             lstResultados.Name = "lstResultados";
             lstResultados.Size = new Size(517, 404);
             lstResultados.TabIndex = 3;
@@ -104,7 +108,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(85, 398);
+            button1.Location = new Point(61, 443);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 7;
@@ -112,11 +116,42 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(342, 479);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 20);
+            label4.TabIndex = 8;
+            label4.Text = "Tasa del dolar:";
+            // 
+            // nudTasa
+            // 
+            nudTasa.DecimalPlaces = 2;
+            nudTasa.Location = new Point(316, 519);
+            nudTasa.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            nudTasa.Name = "nudTasa";
+            nudTasa.Size = new Size(150, 27);
+            nudTasa.TabIndex = 9;
+            // 
+            // btnPesos
+            // 
+            btnPesos.Location = new Point(398, 600);
+            btnPesos.Name = "btnPesos";
+            btnPesos.Size = new Size(136, 29);
+            btnPesos.TabIndex = 10;
+            btnPesos.Text = "Total en RD$";
+            btnPesos.UseVisualStyleBackColor = true;
+            btnPesos.Click += btnPesos_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(968, 730);
+            Controls.Add(btnPesos);
+            Controls.Add(nudTasa);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -129,6 +164,7 @@
             Text = "Frankeny Castillo 2025-0794";
             ((System.ComponentModel.ISupportInitialize)nudNoches).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudTasa).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,5 +179,8 @@
         private Label label2;
         private Label label3;
         private Button button1;
+        private Label label4;
+        private NumericUpDown nudTasa;
+        private Button btnPesos;
     }
 }

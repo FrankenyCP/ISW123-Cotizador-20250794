@@ -38,5 +38,19 @@ namespace Cotizador_TuMatricula
             // y por regla matematica primero se multiplica
 
         }
+
+        private void btnPesos_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = nudTarifa.Value
+            };
+
+            decimal tasa = nudTasa.Value;
+            decimal pesos = reserva.Total * tasa;
+            lstResultados.Items.Add($"Total en pesos: RD$ {pesos:N2}");
+        }
     }
 }
