@@ -46,6 +46,7 @@
             chkFinSemana = new CheckBox();
             btnFinSemana = new Button();
             btnDesglose = new Button();
+            btnTraslado = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -221,11 +222,22 @@
             btnDesglose.UseVisualStyleBackColor = true;
             btnDesglose.Click += btnDesglose_Click;
             // 
+            // btnTraslado
+            // 
+            btnTraslado.Location = new Point(294, 349);
+            btnTraslado.Name = "btnTraslado";
+            btnTraslado.Size = new Size(94, 29);
+            btnTraslado.TabIndex = 18;
+            btnTraslado.Text = "Traslado";
+            btnTraslado.UseVisualStyleBackColor = true;
+            btnTraslado.Click += btnTraslado_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnTraslado);
             Controls.Add(btnDesglose);
             Controls.Add(btnFinSemana);
             Controls.Add(chkFinSemana);
@@ -274,5 +286,6 @@
         private CheckBox chkFinSemana;
         private Button btnFinSemana;
         private Button btnDesglose;
+        private Button btnTraslado;
     }
 }

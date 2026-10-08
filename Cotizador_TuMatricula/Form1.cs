@@ -122,5 +122,16 @@ namespace Cotizador_TuMatricula
             lstResultados.Items.Add($"Servicio (10%): US$ {reserva.Servicio:N2}");
             lstResultados.Items.Add($"Total: US$ {reserva.Total:N2}");
         }
+
+        private void btnTraslado_Click(object sender, EventArgs e)
+        {
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = (int)nudPersonas.Value, // O tus 3 personas
+                Nocturno = true
+            };
+
+            lstResultados.Items.Add($"Traslado Aeropuerto: US$ {traslado.Total:N2}");
+        }
     }
 }
