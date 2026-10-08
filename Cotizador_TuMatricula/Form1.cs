@@ -88,13 +88,13 @@ namespace Cotizador_TuMatricula
         {
             decimal tarifa = nudTarifa.Value;
 
-           
+
             if (chkFinSemana.Checked)
             {
                 tarifa = tarifa * 1.15m;
             }
 
-            
+
             var reserva = new Reserva
             {
                 Huesped = txtHuesped.Text,
@@ -102,8 +102,25 @@ namespace Cotizador_TuMatricula
                 TarifaPorNoche = tarifa
             };
 
-           
+
             lstResultados.Items.Add($"Total (Fin de semana): US$ {reserva.Total:N2}");
+        }
+
+        private void btnDesglose_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = nudTarifa.Value
+            };
+
+            lstResultados.Items.Add($"Subtotal: US$ {reserva.Subtotal:N2}");
+            lstResultados.Items.Add($"Descuento: US$ {reserva.Descuento:N2}");
+            lstResultados.Items.Add($"Base Imponible: US$ {reserva.BaseImponible:N2}");
+            lstResultados.Items.Add($"ITBIS (18%): US$ {reserva.Itbis:N2}");
+            lstResultados.Items.Add($"Servicio (10%): US$ {reserva.Servicio:N2}");
+            lstResultados.Items.Add($"Total: US$ {reserva.Total:N2}");
         }
     }
 }

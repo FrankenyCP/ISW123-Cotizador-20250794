@@ -45,6 +45,7 @@
             btnDeposito = new Button();
             chkFinSemana = new CheckBox();
             btnFinSemana = new Button();
+            btnDesglose = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -210,11 +211,22 @@
             btnFinSemana.UseVisualStyleBackColor = true;
             btnFinSemana.Click += btnFinSemana_Click;
             // 
+            // btnDesglose
+            // 
+            btnDesglose.Location = new Point(294, 487);
+            btnDesglose.Name = "btnDesglose";
+            btnDesglose.Size = new Size(123, 29);
+            btnDesglose.TabIndex = 17;
+            btnDesglose.Text = "Ver Desglose";
+            btnDesglose.UseVisualStyleBackColor = true;
+            btnDesglose.Click += btnDesglose_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnDesglose);
             Controls.Add(btnFinSemana);
             Controls.Add(chkFinSemana);
             Controls.Add(btnDeposito);
@@ -261,5 +273,6 @@
         private Button btnDeposito;
         private CheckBox chkFinSemana;
         private Button btnFinSemana;
+        private Button btnDesglose;
     }
 }
