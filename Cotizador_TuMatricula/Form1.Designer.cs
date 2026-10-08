@@ -49,6 +49,7 @@
             btnTraslado = new Button();
             btnExcursion = new Button();
             btnMinibar = new Button();
+            btnCuentaTotal = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -254,11 +255,22 @@
             btnMinibar.UseVisualStyleBackColor = true;
             btnMinibar.Click += btnMinibar_Click;
             // 
+            // btnCuentaTotal
+            // 
+            btnCuentaTotal.Location = new Point(206, 78);
+            btnCuentaTotal.Name = "btnCuentaTotal";
+            btnCuentaTotal.Size = new Size(123, 29);
+            btnCuentaTotal.TabIndex = 21;
+            btnCuentaTotal.Text = "Cuenta Total";
+            btnCuentaTotal.UseVisualStyleBackColor = true;
+            btnCuentaTotal.Click += btnCuentaTotal_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnCuentaTotal);
             Controls.Add(btnMinibar);
             Controls.Add(btnExcursion);
             Controls.Add(btnTraslado);
@@ -313,5 +325,6 @@
         private Button btnTraslado;
         private Button btnExcursion;
         private Button btnMinibar;
+        private Button btnCuentaTotal;
     }
 }

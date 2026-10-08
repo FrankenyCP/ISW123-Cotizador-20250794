@@ -155,5 +155,43 @@ namespace Cotizador_TuMatricula
 
             lstResultados.Items.Add($"Consumo Minibar: US$ {minibar.Total:N2}");
         }
+
+        private void btnCuentaTotal_Click(object sender, EventArgs e)
+
+        {  // 1. Reserva (con los datos del formulario)
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = nudTarifa.Value
+            };
+
+            // 2. Traslado de aeropuerto (3.1)
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = (int)nudPersonas.Value,
+                Nocturno = true
+            };
+
+            // 3. Excursión a Saona (3.2)
+            var excursion = new Excursion
+            {
+                Personas = 5,
+                PrecioPorPersona = 65m
+            };
+
+            // 4. Consumo de minibar (3.3)
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 6,
+                PrecioUnitario = 3.50m
+            };
+
+            // Suma de los 4 totales
+            decimal cuentaTotalUSD = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
+
+            lstResultados.Items.Add($"--- CUENTA TOTAL ESTADÍA ---");
+            lstResultados.Items.Add($"Total Estadía: US$ {cuentaTotalUSD:N2}");
+        }
     }
 }
