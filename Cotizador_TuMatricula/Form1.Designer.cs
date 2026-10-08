@@ -47,6 +47,7 @@
             btnFinSemana = new Button();
             btnDesglose = new Button();
             btnTraslado = new Button();
+            btnExcursion = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -232,11 +233,22 @@
             btnTraslado.UseVisualStyleBackColor = true;
             btnTraslado.Click += btnTraslado_Click;
             // 
+            // btnExcursion
+            // 
+            btnExcursion.Location = new Point(309, 247);
+            btnExcursion.Name = "btnExcursion";
+            btnExcursion.Size = new Size(94, 29);
+            btnExcursion.TabIndex = 19;
+            btnExcursion.Text = "Excursión";
+            btnExcursion.UseVisualStyleBackColor = true;
+            btnExcursion.Click += btnExcursion_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnExcursion);
             Controls.Add(btnTraslado);
             Controls.Add(btnDesglose);
             Controls.Add(btnFinSemana);
@@ -287,5 +299,6 @@
         private Button btnFinSemana;
         private Button btnDesglose;
         private Button btnTraslado;
+        private Button btnExcursion;
     }
 }

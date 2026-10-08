@@ -133,5 +133,16 @@ namespace Cotizador_TuMatricula
 
             lstResultados.Items.Add($"Traslado Aeropuerto: US$ {traslado.Total:N2}");
         }
+
+        private void btnExcursion_Click(object sender, EventArgs e)
+        {
+            var excursion = new Excursion
+            {
+                Personas = 5,           // Tus personas + 2 (3 + 2 = 5)
+                PrecioPorPersona = 65m  // 45 + 5 * 4 = 65.00
+            };
+
+            lstResultados.Items.Add($"Excursión Saona: US$ {excursion.Total:N2}");
+        }
     }
 }
