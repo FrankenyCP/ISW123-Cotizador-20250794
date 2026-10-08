@@ -39,9 +39,13 @@
             label4 = new Label();
             nudTasa = new NumericUpDown();
             btnPesos = new Button();
+            label5 = new Label();
+            nudPersonas = new NumericUpDown();
+            btnPorPersona = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudPersonas).BeginInit();
             SuspendLayout();
             // 
             // txtHuesped
@@ -119,7 +123,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(342, 479);
+            label4.Location = new Point(61, 509);
             label4.Name = "label4";
             label4.Size = new Size(104, 20);
             label4.TabIndex = 8;
@@ -128,7 +132,7 @@
             // nudTasa
             // 
             nudTasa.DecimalPlaces = 2;
-            nudTasa.Location = new Point(316, 519);
+            nudTasa.Location = new Point(29, 532);
             nudTasa.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudTasa.Name = "nudTasa";
             nudTasa.Size = new Size(150, 27);
@@ -136,7 +140,7 @@
             // 
             // btnPesos
             // 
-            btnPesos.Location = new Point(398, 600);
+            btnPesos.Location = new Point(43, 580);
             btnPesos.Name = "btnPesos";
             btnPesos.Size = new Size(136, 29);
             btnPesos.TabIndex = 10;
@@ -144,11 +148,43 @@
             btnPesos.UseVisualStyleBackColor = true;
             btnPesos.Click += btnPesos_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(517, 480);
+            label5.Name = "label5";
+            label5.Size = new Size(133, 20);
+            label5.TabIndex = 11;
+            label5.Text = "Cantidad Personas:";
+            // 
+            // nudPersonas
+            // 
+            nudPersonas.Location = new Point(504, 518);
+            nudPersonas.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            nudPersonas.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudPersonas.Name = "nudPersonas";
+            nudPersonas.Size = new Size(150, 27);
+            nudPersonas.TabIndex = 12;
+            nudPersonas.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // btnPorPersona
+            // 
+            btnPorPersona.Location = new Point(504, 580);
+            btnPorPersona.Name = "btnPorPersona";
+            btnPorPersona.Size = new Size(157, 29);
+            btnPorPersona.TabIndex = 13;
+            btnPorPersona.Text = "Total Por Persona";
+            btnPorPersona.UseVisualStyleBackColor = true;
+            btnPorPersona.Click += btnPorPersona_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnPorPersona);
+            Controls.Add(nudPersonas);
+            Controls.Add(label5);
             Controls.Add(btnPesos);
             Controls.Add(nudTasa);
             Controls.Add(label4);
@@ -165,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)nudNoches).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPersonas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -182,5 +219,8 @@
         private Label label4;
         private NumericUpDown nudTasa;
         private Button btnPesos;
+        private Label label5;
+        private NumericUpDown nudPersonas;
+        private Button btnPorPersona;
     }
 }

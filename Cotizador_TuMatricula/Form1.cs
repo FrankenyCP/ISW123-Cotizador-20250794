@@ -52,5 +52,20 @@ namespace Cotizador_TuMatricula
             decimal pesos = reserva.Total * tasa;
             lstResultados.Items.Add($"Total en pesos: RD$ {pesos:N2}");
         }
+
+        private void btnPorPersona_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = nudTarifa.Value
+            };
+
+          
+            decimal porPersona = reserva.Total / nudPersonas.Value;
+
+            lstResultados.Items.Add($"Cada persona paga: US$ {porPersona:N2}");
+        }
     }
 }
