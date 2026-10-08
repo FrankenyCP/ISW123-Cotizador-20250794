@@ -42,6 +42,7 @@
             label5 = new Label();
             nudPersonas = new NumericUpDown();
             btnPorPersona = new Button();
+            btnDeposito = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -177,11 +178,22 @@
             btnPorPersona.UseVisualStyleBackColor = true;
             btnPorPersona.Click += btnPorPersona_Click;
             // 
+            // btnDeposito
+            // 
+            btnDeposito.Location = new Point(316, 595);
+            btnDeposito.Name = "btnDeposito";
+            btnDeposito.Size = new Size(94, 29);
+            btnDeposito.TabIndex = 14;
+            btnDeposito.Text = "Depósito";
+            btnDeposito.UseVisualStyleBackColor = true;
+            btnDeposito.Click += btnDeposito_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 730);
+            Controls.Add(btnDeposito);
             Controls.Add(btnPorPersona);
             Controls.Add(nudPersonas);
             Controls.Add(label5);
@@ -222,5 +234,6 @@
         private Label label5;
         private NumericUpDown nudPersonas;
         private Button btnPorPersona;
+        private Button btnDeposito;
     }
 }
