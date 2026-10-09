@@ -249,7 +249,7 @@ namespace Cotizador_TuMatricula
             // 6. Calcular el depósito obligatorio (30%) usando el método corregido de SistemaViejo
             decimal depositoUSD = SistemaViejo.CalcularDeposito(totalGeneralUSD);
 
-            // 7. Imprimir el desglose detallado en la lista
+            // 7. Imprimir el desglose detallado en la lista.
             lstResultados.Items.Add("======== FACTURA DE LA ESTADÍA ========");
             lstResultados.Items.Add($"Huésped: {reserva.Huesped}");
             lstResultados.Items.Add("----------------------------------------");
