@@ -75,6 +75,7 @@
             nudNoches.Size = new Size(150, 27);
             nudNoches.TabIndex = 1;
             nudNoches.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            
             // 
             // nudTarifa
             // 

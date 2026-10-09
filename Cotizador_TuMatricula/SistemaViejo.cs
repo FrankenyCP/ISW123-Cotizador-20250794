@@ -2,7 +2,7 @@
 {
     public static decimal CalcularDeposito(decimal total)
     {
-        decimal porcentaje = 0.03m;
+        decimal porcentaje = 0.30m;
         decimal deposito = total * porcentaje;
         return deposito;
     }
